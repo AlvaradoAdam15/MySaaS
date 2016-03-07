@@ -133,6 +133,10 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        //Laravel Socialite
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
         /*
          * Acacha AdminLTE template provider
          */
@@ -185,6 +189,10 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        //Laravel Socialite
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
         /*
          * Acacha AdminLTE template alias
          */
