@@ -37,7 +37,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><b>adminlte-laravel</b></a>
+            <a class="navbar-brand" href="#"><b>My SaaS</b></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -64,8 +64,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <div class="container">
         <div class="row centered">
             <div class="col-lg-12">
-                <h1>Acacha <b><a href="https://github.com/acacha/adminlte-laravel">adminlte-laravel</a></b></h1>
-                <h3>A <a href="https://laravel.com/">Laravel</a> 5 package that switchs default Laravel
+                <h1>Adam Alvarado <b><a href="https://github.com/AlvaradoAdam15/MySaaS">MySaaS</a></b></h1>
+                <h3>Software as a Service with <a href="https://laravel.com/">Laravel</a> and
                     scaffolding/boilerplate to <a href="https://almsaeedstudio.com/preview">AdminLTE</a> template with
                     <a href="http://getbootstrap.com/">Bootstrap</a> 3.0 and <a href="http://blacktie.co/demo/pratt/">Pratt</a> Landing page</h3>
                 <h3><a href="{{ url('/plans') }}" class="btn btn-lg btn-success">Get Started!</a></h3>
@@ -267,8 +267,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="c">
     <div class="container">
         <p>
-            <a href="https://github.com/acacha/adminlte-laravel"></a><b>admin-lte-laravel</b></a>. A Laravel 5 package that switchs default Laravel scaffolding/boilerplate to AdminLTE template.<br/>
-            <strong>Copyright &copy; 2015 <a href="http://acacha.org">Acacha.org</a>.</strong> Created by <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a>. See code at <a href="https://github.com/acacha/adminlte-laravel">Github</a>
+            <a href="https://github.com/acacha/adminlte-laravel"></a><b>MySaaS</b></a>.Software as a Service with Laravel and scaffolding/boilerplate to AdminLTE template.<br/>
+            <strong>Copyright &copy; 2016 <a href="http://acacha.org">Acacha.org</a>.</strong> Created by <a href="http://acacha.org/mediawiki/Usuari:AlvaradoAdam15">Adam Alvarado Bertomeu</a>. See code at <a href="https://github.com/AlvaradoAdam15/MySaaS">Github</a>
             <br/>
             AdminLTE created by Abdullah Almsaeed <a href="https://almsaeedstudio.com/">almsaeedstudio.com</a>
             <br/>
