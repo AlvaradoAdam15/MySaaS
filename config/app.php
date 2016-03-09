@@ -137,9 +137,6 @@ return [
         //Laravel Socialite
         Laravel\Socialite\SocialiteServiceProvider::class,
 
-        //Laravel Cashier
-        Laravel\Cashier\CashierServiceProvider::class,
-
         /*
          * Acacha AdminLTE template provider
          */
