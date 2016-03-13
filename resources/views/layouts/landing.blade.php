@@ -14,6 +14,9 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
 
+    <!-- Shared Buttons -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
 
@@ -274,6 +277,20 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             <br/>
              Pratt Landing Page Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a>
         </p>
+
+        <a data-original-title="Twitter" rel="tooltip"  href="https://twitter.com/home?status=https%3A//github.com/AlvaradoAdam15/MySaaS" class="btn btn-twitter" data-placement="left">
+            <i class="fa fa-twitter"></i>
+        </a>
+
+        <a data-original-title="Facebook" rel="tooltip"  href="https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/AlvaradoAdam15/MySaaS" class="btn btn-facebook" data-placement="left">
+            <i class="fa fa-facebook"></i>
+        </a>
+
+        <a data-original-title="Google+" rel="tooltip"  href="https://plus.google.com/share?url=https%3A//github.com/AlvaradoAdam15/MySaaS" class="btn btn-google" data-placement="left">
+            <i class="fa fa-google-plus"></i>
+        </a>
+
+    </div>
 
     </div>
 </div>
