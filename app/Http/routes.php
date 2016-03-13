@@ -29,4 +29,8 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToAuthenticationServiceProvider');
     Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleAuthenticationServiceProviderCallback');
+
+    Route::get('csstransitions', function(){
+        return view('tinkering.csstransitions');
+    });
 });

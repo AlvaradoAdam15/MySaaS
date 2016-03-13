@@ -11,7 +11,7 @@ CSS Transitions
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="col-md-12">
-                    <div class="box box-warning box-solid">
+                    <div class="box box-danger box-solid">
                         <div class="box-header with-border">
                             <h3 class="box-title">Collapsable</h3>
 

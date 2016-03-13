@@ -11,6 +11,18 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+#navigation{
+    background-color: #464F51;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #0FF4C6;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+    background-color: #0FF4C6;;
+}
+
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway";
@@ -31,7 +43,7 @@ p {
 
 /* Links */
 a {
-    color: #3bc492;
+    color: #0057FA;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -43,7 +55,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #c0392b;
+    color: #6803DD;
     text-decoration: none;
     outline: 0;
 }
@@ -72,24 +84,24 @@ a:after {
    ========================================================================== */
 
 #headerwrap {
-	background-color: #34495e;
+	background-color: #0FF4C6;
 	padding-top: 60px;
 }
 
 #headerwrap h1 {
 	margin-top: 30px;
-	color: white;
+	color: #464F51;
 	font-size: 70px;
 	
 }
 
 #headerwrap h3 {
-	color: white;
+    color: #464F51;
 	font-size: 30px;
 }
 
 #headerwrap h5 {
-	color: white;
+    color: #464F51;
 	font-weight: 700;
 	text-align: left;
 }
@@ -104,11 +116,13 @@ a:after {
 #intro {
 	padding-top: 50px;
 	border-top: #bdc3c7 solid 5px;
+    background-color: #DEFFF2;
 }
 
 #features {
 	padding-top: 50px;
 	padding-bottom: 50px;
+    background-color: #DEFFF2;
 }
 
 #features .ac a{
@@ -119,7 +133,7 @@ a:after {
 
 #showcase {
 	display: block;
-	background-color: #34495e;
+	background-color: #0FF4C6;
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
@@ -129,7 +143,7 @@ a:after {
 }
 
 #footerwrap {
-	background-color: #2f2f2f;
+	background-color: #464F51;
 	color: white;
 	padding-top: 40px;
 	padding-bottom: 60px;
@@ -149,7 +163,7 @@ a:after {
 /* Copyright Wrap */
 
 #c {
-	background: #222222;
+	background: #000009;
 	padding-top: 15px;
 	text-align: center;
 }
