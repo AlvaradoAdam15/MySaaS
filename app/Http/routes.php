@@ -33,4 +33,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('csstransitions', function(){
         return view('tinkering.csstransitions');
     });
+
+    Route::get('plans', 'PlansController@index');
+
+    Route::get('register_subsciption', function(){
+        return view('auth.register_subsciption');
+    });
+
 });
