@@ -137,6 +137,9 @@ return [
         //Laravel Socialite
         Laravel\Socialite\SocialiteServiceProvider::class,
 
+        //Flash Services
+        App\Providers\FlashServiceProvider::class,
+
         /*
          * Acacha AdminLTE template provider
          */
@@ -192,6 +195,10 @@ return [
 
         //Laravel Socialite
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
+        //Flash Services
+        'Flash' => App\Facades\Flash::class,
+        App\Providers\FlashServiceProvider::class,
 
         /*
          * Acacha AdminLTE template alias
