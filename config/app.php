@@ -140,6 +140,9 @@ return [
         //Flash Services
         App\Providers\FlashServiceProvider::class,
 
+        //Laravel Cashier
+        Laravel\Cashier\CashierServiceProvider::class,
+
         /*
          * Acacha AdminLTE template provider
          */
