@@ -43,4 +43,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('sendContactEmail','ContactEmailController@send');
 
     Route::post('registerAndSubscribeToStripe', 'Auth\AuthController@registerAndSubscribeToStripe');
+
+    Route::get('reports/dailySales', 'ReportsController@dailySales');
 });
