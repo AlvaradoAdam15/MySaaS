@@ -15,11 +15,11 @@
 
         var ctx = document.getElementById("barChartDailySales").getContext("2d");
         var data = {
-            labels: ["Day1", "Day2", "Day3", "Day3", "Day4", "Day5"],
+            labels: {!! json_encode($days) !!},
             datasets: [{
+                data: {!! json_encode($totals) !!},
                 label: "Daily Sales",
-                data: [950, 1589, 1589, 2500, 3400, 456],
-                fillColor: "rgba(220,220,220,0.2)",
+                fillColor: "rgba(220,220,220,0, 5)",
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
@@ -34,8 +34,8 @@
 @endsection
 @section('customs-css')
      <!-- Data Table -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
-@end
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" />
+@endsection
 
 @section('main-content')
     <div class="container spark-screen">
@@ -64,14 +64,12 @@
                                 </tr>
                             </thead>
                             <thbody>
-                                <tr>
-                                    <td>Day 1</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>Day 2</td>
-                                    <td>11</td>
-                                </tr>
+                                @foreach($totals as $index => $total)
+                                    <tr>
+                                        <td> {{$days[$index]}}</td>
+                                        <td> {{$total}}</td>
+                                    </tr>
+                                @endforeach
                             </thbody>
                         </table>
                     </div>
