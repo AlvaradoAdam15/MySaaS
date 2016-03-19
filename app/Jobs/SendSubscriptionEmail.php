@@ -11,14 +11,16 @@ use Mail;
 class SendSubscriptionEmail extends Job implements ShouldQueue
 {
     use InteractsWithQueue, SerializesModels;
-    protected $user;
+
+    protected $message;
+
     /**
      * SendSubscriptionEmail constructor.
      * @param $user
      */
-    public function __construct(User $user)
+    public function __construct($message)
     {
-        $this->user = $user;
+        $this->message = $message;
     }
     /**
      * Execute the job.
@@ -27,9 +29,9 @@ class SendSubscriptionEmail extends Job implements ShouldQueue
      */
     public function handle()
     {
-        Mail::send('emails.reminder', ['user' => $this->user], function ($m) use ($user) {
-            $m->from('no-reply@myapp.com', 'My SaaS');
-            $m->to($this->user->email)->subject('Welcome!');
+        Mail::raw('Text to e-mail', function ($message)  {
+            $message->from($this->message['email'], 'My SaaS');
+            $message->to("adamalvarado@iesebre.com")->subject('Welcome!');
         });
     }
 }
