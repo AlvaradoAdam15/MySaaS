@@ -73,15 +73,15 @@
                     </div>
                     <div class="box-body">
                         <div class="chart">
-                            <graph :id=""
-                                   :labels="['day1', 'day12', 'day13']"
-                                    :values="[56,34,20,178]"></graph>
+                            <graph :labels='{!! json_encode($days) !!}'
+                                   :values='{!! json_encode($totals) !!}'></graph>
                             <graph :id=""
                                    :labels="['day4', 'day5', 'day6']"
                                    :values="[60,43,89,74]"></graph>
                             <graph :id=""
                                    :labels="['day7', 'day8', 'day9']"
-                                   :values="[24,125,20,20]"></graph>
+                                   :values="[24,125,20,20]"
+                                   color="red"></graph>
                         </div>
                     </div>
                     <!-- /.box-body -->

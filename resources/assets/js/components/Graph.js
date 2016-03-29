@@ -3,7 +3,13 @@ import Chart from 'chart.js';
 export default{
     template: '<canvas style="height: 226px; width: 508px;" width="508" height="226"></canvas>',
 
-    props: ['id', 'labels', 'values'],
+    props: {
+        labels: {},
+        values: {},
+        color: {
+            default: 'rgba(120,220,220,0.5)'
+        }
+    },
 
         ready(){
             //alert ("Hola soc Graph");
@@ -14,7 +20,7 @@ export default{
             datasets: [{
                 data: this.values,
             label: "Daily Sales",
-                fillColor: "rgba(220,220,220,0, 5)",
+                fillColor: this.color,
                 strokeColor: "rgba(220,220,220,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
