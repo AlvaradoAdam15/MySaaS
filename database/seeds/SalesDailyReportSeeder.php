@@ -15,8 +15,8 @@ class SalesDailyReportSeeder extends Seeder
 
         $totals = array();
 
-        foreach ($subscriptions as $index => $subscription) {
-            $day = $subscription->created_at->format('Y-m-D');
+        foreach ($subscriptions as $subscription) {
+            $day = $subscription->created_at->format('Y-m-d');
             $quantity = $subscription->quantity;
             if(array_key_exists($day, $totals)){
                 $totals[$day] = $totals[$day] + $quantity;
