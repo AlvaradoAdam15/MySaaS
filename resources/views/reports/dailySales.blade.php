@@ -32,7 +32,7 @@
 
     </script>
 @endsection
-@section('customs-css')
+@section('customs_css')
      <!-- Data Table -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" />
 @endsection
