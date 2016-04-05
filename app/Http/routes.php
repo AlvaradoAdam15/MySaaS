@@ -48,4 +48,6 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('reports/downloadInvoice', 'PDFController@invoiceHtml');
 
+    Route::get('reports/createInvoice', 'CreateInvoiceController@index');
+
 });
