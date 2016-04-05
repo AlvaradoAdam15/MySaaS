@@ -84,12 +84,12 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <button id="flyer_preview_btn" type="button" class="btn btn-primary btn-block" tabindex="9">Update preview</button>
+                                        <button onclick="preview()" id="flyer_preview_btn" type="button" class="btn btn-primary btn-block" tabindex="9">Update preview</button>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group text-right">
-                                        <button id="flyer_download_btn" type="button" class="btn btn-default btn-xs btn-block" tabindex="10">Download</button>
+                                        <button onclick="download()" id="flyer_download_btn" type="button" class="btn btn-default btn-xs btn-block" tabindex="10">Download</button>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +106,27 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+
     <script>
+
+        function generatePDF(){
+            var pdf = new jsPDF('p', 'mm', 'a4');
+            pdf.text(30, 30, 'Hello world!');
+            return pdf;
+        }
+
+
+        function download() {
+            var pdf = generatePDF();
+            pdf.save(document.getElementById('flyer-title').value + '.pdf');
+        }
+
+        function preview() {
+            var pdf = generatePDF();
+            var string = pdf.output('datauristring');
+            $('#pdf_preview').attr('src', string);
+        }
 
     </script>
 
