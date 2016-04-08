@@ -106,26 +106,27 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.min.js"></script>
 
     <script>
 
-        var logo;
+        logo = document.getElementById('invoice-image');
+        logo_data = {};
 
         function generatePDF(){
             this.pdf = new jsPDF('p', 'mm', 'a4');
-            this.title = document.getElementById('invoice-title').value;
-            this.titleColor = document.getElementById('invoice-title-color').value;
-            this.titleSize = document.getElementById('invoice-title-size').value;
-            this.description = document.getElementById('invoice-description').value;
-            this.price = document.getElementById('invoice-price').value;
-            this.currency = document.getElementById('invoice-price-currency').value;
-            this.priceColor = document.getElementById('invoice-price-color').value;
+            this.title =$('#invoice-title').val();
+            this.titleColor = $('#invoice-title-color').val();
+            this.titleSize = $('#invoice-title-size').val();
+            this.description = $('#invoice-description').val();
+            this.price = $('#invoice-price').val();
+            this.currency = $('#invoice-price-currency').val();
+            this.priceColor = $('#invoice-price-color').val();
             this.separator = "-------------------------------------------------------------------------"
             this.titleSeparation = 30;
 
-            if (logo != null){
-                pdf.addImage(logo, 'JPEG', 10, 5, 80, 60);
+            if (logo_data.src != null){
+                pdf.addImage(logo_data.src, logo_data.type, 10, 5, 80, 60);
                 this.titleSeparation = 90;
             }
 
@@ -150,7 +151,7 @@
 
         function download() {
             this.pdf = generatePDF();
-            this.pdf.save(document.getElementById('invoice-title').value + '.pdf');
+            this.pdf.save($('#invoice-title').val() + '.pdf');
         }
 
         function preview() {
@@ -164,14 +165,26 @@
             var FR= new FileReader();
             FR.onload = function(e) {
                 logo = e.target.result;
-
             };
             FR.readAsDataURL(this.files[0]);
-
         }
 
-        document.getElementById('invoice-image').addEventListener("change", getBase64, false);
+        function getImageData() {
+            var file = this.files[0];
+            logo_data = {
+                type: file.type === 'image/jpeg' ? 'JPEG' : 'PNG'
+            };
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                logo_data.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+
+        document.getElementById('invoice-image').addEventListener("change", getImageData, false);
 
     </script>
+
 
 @endsection
