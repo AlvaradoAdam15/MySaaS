@@ -22,10 +22,41 @@ class UsersController extends Controller
 
     public function index()
     {
-        $users = Cache::remember('users', 10, function(){
+        $users = Cache::remember('query.users', 10, function(){
             return User::all();
         });
 
         return $users;
+    }
+
+    public function store()
+    {
+        User::create(['name' =>'Pepe', 'email' => 'pepe@pepitor.com']);
+
+        Cache::forget('query.users');
+
+//        Cache:flush();
+
+    }
+
+    public function update()
+    {
+        $user = User::first();
+
+        $user->name='Pepita';
+
+        $user->save;
+
+        Cache::forget('query.users');
+
+//        Cache:flush();
+
+    }
+
+    public function destroy($id)
+    {
+        User::destroy($id);
+        Cache::forget('query.users');
+        //Cache:flush();
     }
 }
