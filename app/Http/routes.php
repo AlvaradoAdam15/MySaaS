@@ -59,4 +59,8 @@ Route::group(['middleware' => ['web']], function () {
         Cache::forget('query.users');
     });
 
+    Route::get('sendpushnotify', function(){
+        return view('pushnotify.sendpushnotify');
+    });
+
 });
