@@ -14,8 +14,12 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
 
+    <!-- Shared Buttons -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/all.css">
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
@@ -37,7 +41,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><b>adminlte-laravel</b></a>
+            <a class="navbar-brand" href="#"><b>My SaaS</b></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -49,7 +53,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a href="{{ url('/plans') }}">Register</a></li>
                 @else
                     <li><a href="/home">{{ Auth::user()->name }}</a></li>
                 @endif
@@ -64,11 +68,11 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <div class="container">
         <div class="row centered">
             <div class="col-lg-12">
-                <h1>Acacha <b><a href="https://github.com/acacha/adminlte-laravel">adminlte-laravel</a></b></h1>
-                <h3>A <a href="https://laravel.com/">Laravel</a> 5 package that switchs default Laravel
+                <h1>Adam Alvarado <b><a href="https://github.com/AlvaradoAdam15/MySaaS">MySaaS</a></b></h1>
+                <h3>Software as a Service with <a href="https://laravel.com/">Laravel</a> and
                     scaffolding/boilerplate to <a href="https://almsaeedstudio.com/preview">AdminLTE</a> template with
                     <a href="http://getbootstrap.com/">Bootstrap</a> 3.0 and <a href="http://blacktie.co/demo/pratt/">Pratt</a> Landing page</h3>
-                <h3><a href="{{ url('/register') }}" class="btn btn-lg btn-success">Get Started!</a></h3>
+                <h3><a href="{{ url('/plans') }}" class="btn btn-lg btn-success">Get Started!</a></h3>
             </div>
             <div class="col-lg-2">
                 <h5>Amazing admin template</h5>
@@ -245,7 +249,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div class="col-lg-7">
             <h3>Drop Us A Line</h3>
             <br>
-            <form role="form" action="#" method="post" enctype="plain">
+            <form role="form" action="{{url('sendContactEmail')}}" method="post" enctype="plain">
+                {{csrf_field()}}
                 <div class="form-group">
                     <label for="name1">Your Name</label>
                     <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
@@ -267,13 +272,27 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 <div id="c">
     <div class="container">
         <p>
-            <a href="https://github.com/acacha/adminlte-laravel"></a><b>admin-lte-laravel</b></a>. A Laravel 5 package that switchs default Laravel scaffolding/boilerplate to AdminLTE template.<br/>
-            <strong>Copyright &copy; 2015 <a href="http://acacha.org">Acacha.org</a>.</strong> Created by <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a>. See code at <a href="https://github.com/acacha/adminlte-laravel">Github</a>
+            <a href="https://github.com/acacha/adminlte-laravel"></a><b>MySaaS</b></a>.Software as a Service with Laravel and scaffolding/boilerplate to AdminLTE template.<br/>
+            <strong>Copyright &copy; 2016 <a href="http://acacha.org">Acacha.org</a>.</strong> Created by <a href="http://acacha.org/mediawiki/Usuari:AlvaradoAdam15">Adam Alvarado Bertomeu</a>. See code at <a href="https://github.com/AlvaradoAdam15/MySaaS">Github</a>
             <br/>
             AdminLTE created by Abdullah Almsaeed <a href="https://almsaeedstudio.com/">almsaeedstudio.com</a>
             <br/>
              Pratt Landing Page Created by <a href="http://www.blacktie.co">BLACKTIE.CO</a>
         </p>
+
+        <a data-original-title="Twitter" rel="tooltip"  href="https://twitter.com/home?status=https%3A//github.com/AlvaradoAdam15/MySaaS" class="btn btn-twitter" data-placement="left">
+            <i class="fa fa-twitter"></i>
+        </a>
+
+        <a data-original-title="Facebook" rel="tooltip"  href="https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/AlvaradoAdam15/MySaaS" class="btn btn-facebook" data-placement="left">
+            <i class="fa fa-facebook"></i>
+        </a>
+
+        <a data-original-title="Google+" rel="tooltip"  href="https://plus.google.com/share?url=https%3A//github.com/AlvaradoAdam15/MySaaS" class="btn btn-google" data-placement="left">
+            <i class="fa fa-google-plus"></i>
+        </a>
+
+    </div>
 
     </div>
 </div>
@@ -288,5 +307,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         interval: 3500
     })
 </script>
+<script src="js/all.js"></script>
+@include('layouts.partials.flashmessage')
 </body>
 </html>
