@@ -55,4 +55,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::delete('users', 'UsersController@delete');
     Route::put('users', 'UsersController@update');
 
+    Event::listen('user.change', function(){
+        Cache::forget('query.users');
+    });
+
 });

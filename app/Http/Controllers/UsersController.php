@@ -33,7 +33,9 @@ class UsersController extends Controller
     {
         User::create(['name' =>'Pepe', 'email' => 'pepe@pepitor.com']);
 
-        Cache::forget('query.users');
+        Event::fire('user.change');
+
+//        Cache::forget('query.users');
 
 //        Cache:flush();
 
@@ -47,16 +49,21 @@ class UsersController extends Controller
 
         $user->save;
 
-        Cache::forget('query.users');
+        Event::fire('user.change');
+
+//        Cache::forget('query.users');
 
 //        Cache:flush();
-
     }
 
     public function destroy($id)
     {
         User::destroy($id);
-        Cache::forget('query.users');
-        //Cache:flush();
+
+        Event::fire('user.change');
+
+//        Cache::forget('query.users');
+
+//        Cache:flush();
     }
 }
