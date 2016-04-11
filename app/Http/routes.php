@@ -43,4 +43,20 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('sendContactEmail','ContactEmailController@send');
 
     Route::post('registerAndSubscribeToStripe', 'Auth\AuthController@registerAndSubscribeToStripe');
+
+    Route::get('reports/dailySales', 'ReportsController@dailySales');
+
+    Route::get('reports/downloadInvoice', 'PDFController@invoiceHtml');
+
+    Route::get('reports/createInvoice', 'CreateInvoiceController@index');
+
+    Route::get('users', 'UsersController@index');
+    Route::post('users', 'UsersController@store');
+    Route::delete('users', 'UsersController@delete');
+    Route::put('users', 'UsersController@update');
+
+    Event::listen('user.change', function(){
+        Cache::forget('query.users');
+    });
+
 });

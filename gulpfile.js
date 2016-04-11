@@ -12,16 +12,18 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.less('app.less');
-    mix.less('admin-lte/AdminLTE.less');
-    mix.less('bootstrap/bootstrap.less');
+    //mix.less('app.less');
+    //mix.less('admin-lte/AdminLTE.less');
+    //mix.less('bootstrap/bootstrap.less');
+    //
+    //mix.scripts([
+    //    'sweetalert-dev.js'
+    //]);
+    //
+    //mix.styles([
+    //    'sweetalert.css',
+    //    'pricingtables.css'
+    //]);
 
-    mix.scripts([
-        'sweetalert-dev.js'
-    ]);
-
-    mix.styles([
-        'sweetalert.css',
-        'pricingtables.css'
-    ]);
+    mix.browserify('main.js');
 });
