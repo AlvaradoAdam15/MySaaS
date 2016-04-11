@@ -50,4 +50,6 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('reports/createInvoice', 'CreateInvoiceController@index');
 
+    Route::get('users', 'UsersController@index');
+
 });

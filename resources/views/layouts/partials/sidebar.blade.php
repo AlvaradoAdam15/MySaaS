@@ -43,6 +43,7 @@
                     <li><a href="{{url('reports/createInvoice')}}">Create Invoice PDF</a></li>
                 </ul>
             </li>
+            <li><a href="{{ url('users') }}"><i class='fa fa-link'></i> <span>Users</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
