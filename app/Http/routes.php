@@ -59,6 +59,6 @@ Route::group(['middleware' => ['web']], function () {
         return view('pushnotify.sendpushnotify');
     });
 
-    Route::get('profil', 'ProfileController@show');
+    Route::get('profile', 'ProfileController@show');
 
 });
