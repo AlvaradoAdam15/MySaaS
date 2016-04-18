@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Profile;
 use App\ProfileCreatorHtml;
+use App\ProfileCreatorJson;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -10,9 +12,9 @@ use App\Http\Requests;
 
 class ProfileController extends Controller
 {
-    public function show()
+    public function show(Profile $profile)
     {
-        $creator = new ProfileCreatorHtml();
-        Auth::user()->profile($creator);
+        return $profile->show(Auth::user());
     }
+
 }

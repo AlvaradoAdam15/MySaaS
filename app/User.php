@@ -29,6 +29,6 @@ class User extends Authenticatable
 
     public function profile($profileCreator)
     {
-        return $profileCreator->show();
+        return $profileCreator->show($this);
     }
 }

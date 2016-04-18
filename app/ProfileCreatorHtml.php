@@ -9,13 +9,13 @@
 namespace App;
 
 
-class ProfileCreatorHtml
+class ProfileCreatorHtml extends AbstractProfiler
 {
-    public function show()
+    public function show($user)
     {
         return "<div>
-                Id: <b>". $this->id ."</b> <br />
-                Name: <b>". $this->name ."</b>
+               Id: <b>\". $this->getUserId() .\"</b> <br />
+               Name: <b>\". $this->getUserName() .\"</b>
         </div>";
     }
 }
