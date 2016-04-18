@@ -52,7 +52,7 @@ class UsersController extends Controller
         $user->save;
 
         $this->fireUserHasChanged();
-        
+
 //        Cache::forget('query.users');
 
 //        Cache:flush();
