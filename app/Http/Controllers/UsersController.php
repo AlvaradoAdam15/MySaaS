@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserHasChanged;
 use App\User;
 use Cache;
+use Event;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -33,7 +35,7 @@ class UsersController extends Controller
     {
         User::create(['name' =>'Pepe', 'email' => 'pepe@pepitor.com']);
 
-        Event::fire('user.change');
+        $this->fireUserHasChanged();
 
 //        Cache::forget('query.users');
 
@@ -49,8 +51,8 @@ class UsersController extends Controller
 
         $user->save;
 
-        Event::fire('user.change');
-
+        $this->fireUserHasChanged();
+        
 //        Cache::forget('query.users');
 
 //        Cache:flush();
@@ -60,10 +62,16 @@ class UsersController extends Controller
     {
         User::destroy($id);
 
-        Event::fire('user.change');
+        $this->fireUserHasChanged();
 
 //        Cache::forget('query.users');
 
 //        Cache:flush();
+    }
+
+    private function fireUserHasChanged()
+    {
+        Event::fire(new UserHasChanged());
+
     }
 }
