@@ -19,6 +19,9 @@ class EventServiceProvider extends ServiceProvider
         \App\Events\UserHasChanged::class => [
             \App\Listeners\UserCacheForget::class,
         ],
+//        \App\Events\ShotoutAdded::class =>[
+//            \App\Listeners\ShotoutSendNotification::class,
+//        ],
     ];
 
     /**

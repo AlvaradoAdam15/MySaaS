@@ -25,5 +25,8 @@ elixir(function(mix) {
     //    'pricingtables.css'
     //]);
 
+    mix.scripts([
+        'notifications-shotout.js'
+    ]);
     mix.browserify('main.js');
 });

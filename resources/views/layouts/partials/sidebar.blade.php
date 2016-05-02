@@ -47,6 +47,7 @@
                 </ul>
             </li>
             <li><a href="{{ url('users') }}"><i class='fa fa-link'></i> <span>Users</span></a></li>
+            <li><a href="{{ url('shotout') }}"><i class='fa fa-link'></i> <span>Shotout</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $profileCreator->show($this);
     }
+
+    public function shoutOuts()
+    {
+        return $this->hasMany('App\ShoutOut');
+    }
 }

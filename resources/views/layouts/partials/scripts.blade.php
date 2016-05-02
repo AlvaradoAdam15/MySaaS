@@ -9,6 +9,10 @@
 
 <script src="{{ asset('/js/main.js') }}" type="text/javascript"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/3.0.0/pusher.js"></script>
+
+<script src="{{ asset('/js/all.js') }}"></script>
+
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the
       user experience. Slimscroll is required when using the

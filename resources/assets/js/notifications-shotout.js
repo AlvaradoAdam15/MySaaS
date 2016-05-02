@@ -22,4 +22,3 @@ var pusher = new Pusher('928577ad9983004c8a77', {
 
 var channel = pusher.subscribe('shotout-added');
 channel.bind("App\\Events\\ShotoutAdded", notifyUser);
-//# sourceMappingURL=all.js.map
