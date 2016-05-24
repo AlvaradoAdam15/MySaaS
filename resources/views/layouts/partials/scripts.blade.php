@@ -10,6 +10,7 @@
 <script src="{{ asset('/js/main.js') }}" type="text/javascript"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/3.0.0/pusher.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 
 <script src="{{ asset('/js/all.js') }}"></script>
 
